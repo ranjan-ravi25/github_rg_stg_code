@@ -11,3 +11,14 @@ steps:
 - task: TerraformInstaller@1
   inputs:
     terraformVersion: 'latest'
+
+- task: TerraformTask@5
+  inputs:
+    provider: 'azurerm'
+    command: 'init'
+    workingDirectory: '$(System.DefaultWorkingDirectory)\rgstgcodee\provider_parents'
+    backendServiceArm: 'agentportal'
+    backendAzureRmResourceGroupName: 'Resource groups'
+    backendAzureRmStorageAccountName: 'storageravi22'
+    backendAzureRmContainerName: 'containerravi'
+    backendAzureRmKey: 'pass4567*'
