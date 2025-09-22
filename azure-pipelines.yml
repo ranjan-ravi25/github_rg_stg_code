@@ -36,3 +36,4 @@ steps:
       workingDirectory: '$(System.DefaultWorkingDirectory)/rgstgcodee/provider_parents'
       environmentServiceNameAzureRM: 'agentportal'
       commandOptions: '-auto-approve'
+
