@@ -28,4 +28,4 @@ steps:
     provider: 'azurerm'
     command: 'plan'
     environmentServiceNameAzureRM: 'agentportal'
-  
+
