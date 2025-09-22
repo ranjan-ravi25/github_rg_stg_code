@@ -8,3 +8,6 @@ steps:
   inputs:
     terraformVersion: 'latest'
 
+- task: TerraformInstaller@1
+  inputs:
+    terraformVersion: 'latest'
