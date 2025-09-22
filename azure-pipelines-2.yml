@@ -7,3 +7,18 @@ steps:
   displayName: 'Install Latest Terraform'
   inputs:
     terraformVersion: 'latest'   # automatically install latest stable Terraform version
+
+- task: TerraformInstaller@1
+  inputs:
+    terraformVersion: 'latest'
+
+- task: TerraformTask@5
+  inputs:
+    provider: 'azurerm'
+    command: 'init'
+    workingDirectory: '$(System.DefaultWorkingDirectory)\rgstgcodee \provider_parents'
+    backendServiceArm: 'agentportal'
+    backendAzureRmResourceGroupName: 'resourcegroupravi'
+    backendAzureRmStorageAccountName: 'storageravi22'
+    backendAzureRmContainerName: 'containerravi'
+    backendAzureRmKey: 'pass2468*'
