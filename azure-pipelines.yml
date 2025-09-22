@@ -4,7 +4,7 @@ pool: 220925
 
 steps:
   - task: TerraformInstaller@1
-    displayName: "Install latest Terraform"
+    displayName: "Install Latest Terraform"
     inputs:
       terraformVersion: 'latest'
 
@@ -27,3 +27,12 @@ steps:
       command: 'plan'
       workingDirectory: '$(System.DefaultWorkingDirectory)/rgstgcodee/provider_parents'
       environmentServiceNameAzureRM: 'agentportal'
+
+  - task: TerraformTask@5
+    displayName: "Terraform Apply"
+    inputs:
+      provider: 'azurerm'
+      command: 'apply'
+      workingDirectory: '$(System.DefaultWorkingDirectory)/rgstgcodee/provider_parents'
+      environmentServiceNameAzureRM: 'agentportal'
+      commandOptions: '-auto-approve'
