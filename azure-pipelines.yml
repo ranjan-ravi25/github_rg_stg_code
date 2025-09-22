@@ -4,7 +4,10 @@ trigger: none
 
 pool: 220925
 
-- task: TerraformInstaller@1
+steps:
+  - task: TerraformInstaller@1
     displayName: "Install latest Terraform"
     inputs:
       terraformVersion: 'latest'
+
+  
