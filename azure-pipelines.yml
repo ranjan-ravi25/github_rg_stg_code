@@ -19,3 +19,11 @@ steps:
       backendAzureRmStorageAccountName: 'storageravi22'
       backendAzureRmContainerName: 'containerravi'
       backendAzureRmKey: 'ravi123.tfstate'
+
+  - task: TerraformTask@5
+    displayName: "Terraform Plan"
+    inputs:
+      provider: 'azurerm'
+      command: 'plan'
+      workingDirectory: '$(System.DefaultWorkingDirectory)/rgstgcodee/provider_parents'
+      environmentServiceNameAzureRM: 'agentportal'
