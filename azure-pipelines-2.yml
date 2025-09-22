@@ -19,9 +19,7 @@ steps:
     backendAzureRmContainerName: 'containerravi'
     backendAzureRmKey: 'pass@256'
 
-# 1️⃣ Install latest Terraform
 - task: TerraformInstaller@1
   displayName: 'Install Latest Terraform'
   inputs:
-    terraformVersion: 'latest'   
-
+    terraformVersion: 'latest'   # automatically installs the newest stable Terraform version
