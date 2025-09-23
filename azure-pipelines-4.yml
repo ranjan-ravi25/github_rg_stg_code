@@ -1,9 +1,20 @@
 trigger: none
 
 pool: 220925
-  
+
 steps:
   - task: TerraformInstaller@1
     displayName: "Install latest Terraform"
     inputs:
       terraformVersion: 'latest'
+
+  - task: TerraformTask@5
+    displayName: "Terraform Init"
+    inputs:
+      provider: 'azurerm'
+      command: 'init'
+      workingDirectory: '$(System.DefaultWorkingDirectory)/rgstgcodee/provider_parents'
+      backendServiceArm: 'agentportal'
+      backendAzureRmResourceGroupName: 'ravirg23'
+      backendAzureRmStorageAccountName: 'stg24'
+      backendAzureRmContainerName: 'cont24'
