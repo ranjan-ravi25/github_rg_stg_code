@@ -15,7 +15,7 @@ steps:
       command: 'init'
       workingDirectory: '$(System.DefaultWorkingDirectory)/rgstgcodee/provider_parents'
       backendServiceArm: 'agentportal'
-      backendAzureRmResourceGroupName: 'ravirg23i'
+      backendAzureRmResourceGroupName: 'ravirg23'
       backendAzureRmStorageAccountName: 'stg24'
       backendAzureRmContainerName: 'cont24'
       backendAzureRmKey: 'ravi123.tfstate'

@@ -1,6 +1,7 @@
 module "resource_group" {
   source                  = "../Child_module/resource_group"
-  resource_group_name     = "ravirg235"
+
+  resource_group_name     = "ravirg235
   resource_group_location = "East US"
 }
 
