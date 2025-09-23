@@ -1,8 +1,14 @@
 module "resource_group" {
   source                  = "../Child_module/resource_group"
-  resource_group_name     = "ravirg"
+  resource_group_name     = "ravirg23"
   resource_group_location = "East US"
 }
+
+# module "resource_group" {
+#   source                  = "../Child_module/resource_group"
+#   resource_group_name     = "ravirg24"
+#   resource_group_location = "East US"
+# }
 
 # module "azurerm_virtual_network" {
 #   depends_on               = [module.resource_group]
