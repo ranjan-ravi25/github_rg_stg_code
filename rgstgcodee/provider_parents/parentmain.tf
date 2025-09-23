@@ -3,10 +3,11 @@ module "resource_group" {
   resource_group_name     = "ravirg"
   resource_group_location = "East US"
 }
+
 # module "azurerm_virtual_network" {
 #   depends_on               = [module.resource_group]
 #   source                   = "../Child_module/virtual_network"
-#   virtual_network_name     = "ravivnet"
+#   virtual_network_name     = "ravivnet1"
 #   virtual_network_location = "East US"
 #   resource_group_name      = "ravirg"
 #   address_space            = ["10.0.0.0/16"]
@@ -63,7 +64,7 @@ module "resource_group" {
 #   virtual_network_name = "ravivnet"
 #   public_ip_name = "pip1"
 
-# }
+
 # module "azurerm_linux_virtual_machinebakend" {
 #   source              = "../child_module/virtual_machine"
 #   depends_on          = [module.bakend_subnet]
