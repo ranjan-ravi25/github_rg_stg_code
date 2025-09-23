@@ -3,11 +3,13 @@ trigger: none
 pool: 220925
 
 steps:
+  # 1️⃣ Install latest Terraform
   - task: TerraformInstaller@1
     displayName: "Install latest Terraform"
     inputs:
       terraformVersion: 'latest'
 
+  # 2️⃣ Terraform Init
   - task: TerraformTask@5
     displayName: "Terraform Init"
     inputs:
@@ -18,3 +20,24 @@ steps:
       backendAzureRmResourceGroupName: 'ravirg23'
       backendAzureRmStorageAccountName: 'stg24'
       backendAzureRmContainerName: 'cont24'
+      backendAzureRmKey: 'resource.terraform.tfstate'  # must match your .tf backend key
+
+  # 3️⃣ Terraform Plan (optional but recommended)
+  - task: TerraformTask@5
+    displayName: "Terraform Plan"
+    inputs:
+      provider: 'azurerm'
+      command: 'plan'
+      workingDirectory: '$(System.DefaultWorkingDirectory)/rgstgcodee/provider_parents'
+      environmentServiceNameAzureRM: 'agentportal'
+
+  # 4️⃣ Terraform Apply (optional, uncomment to apply automatically)
+  #- task: TerraformTask@5
+  #  displayName: "Terraform Apply"
+  #  inputs:
+  #    provider: 'azurerm'
+  #    command: 'apply'
+  #    workingDirectory: '$(System.DefaultWorkingDirectory)/rgstgcodee/provider_parents'
+  #    environmentServiceNameAzureRM: 'agentportal'
+  #    ensureBackend: true
+  #    args: '-auto-approve'
